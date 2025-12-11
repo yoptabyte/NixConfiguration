@@ -193,7 +193,8 @@
         "antigravity-nix": "antigravity-nix",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "nixvim": "nixvim"
+        "nixvim": "nixvim",
+        "warp-preview-flake": "warp-preview-flake"
       }
     },
     "systems": {
@@ -238,6 +239,26 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "warp-preview-flake": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1765338297,
+        "narHash": "sha256-4Z6QpSxdHuJXBMd4w8U+gZGUZ6ndjSrihVizy7jdQfg=",
+        "owner": "jordangarrison",
+        "repo": "warp-preview-flake",
+        "rev": "294df08dda0ef95d4aff4b1f3448483b7b454c10",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jordangarrison",
+        "repo": "warp-preview-flake",
         "type": "github"
       }
     }

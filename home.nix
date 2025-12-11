@@ -1,6 +1,16 @@
 { config, pkgs, inputs, ... }:
-
-{
+let
+  # Override upstream hash for warp preview .deb to current value
+  warpPreview =
+    inputs.warp-preview-flake.packages.${pkgs.system}.default.overrideAttrs (_: {
+      src = pkgs.fetchurl {
+        url = "https://app.warp.dev/download?channel=preview&package=deb";
+        sha256 = "sha256-Iy64EIRYUHW/0aSF61o4FtYGFZzOEba8YhAV9+/7pzw=";
+        curlOptsList = [ "-L" ];
+        name = "warp-preview.deb";
+      };
+    });
+in {
   # Home Manager needs a bit of information about you and the
   # paths it should manage
   home.username = "yoptabyte";
@@ -19,6 +29,7 @@
       fontconfig
       nixfmt
       inputs.antigravity-nix.packages.x86_64-linux.default
+      warpPreview
   ];
 
   fonts.fontconfig.enable = true;
@@ -1248,4 +1259,3 @@
     '';
  };
 }
-

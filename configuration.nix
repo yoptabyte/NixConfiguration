@@ -95,7 +95,7 @@
     terminals = {
       enable = true;
       ghostty.enable = true;
-      warp-terminal.enable = true;
+      warp-terminal.enable = false;
     };
     
     # Editors
@@ -147,10 +147,10 @@
     # Desktop environments 
     desktop.gnome.enable = true;
 
-    # Shell
+    # Shells
     shell.nushell = {
       enable = true;
-      defaultShell = true;
+      defaultShell = false;
     };
   };
 

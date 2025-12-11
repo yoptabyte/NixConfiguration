@@ -17,9 +17,13 @@
       url = "github:jacopone/antigravity-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    warp-preview-flake = {
+      url = "github:jordangarrison/warp-preview-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
  };
 
-  outputs = { self, nixpkgs, home-manager, nixvim, antigravity-nix, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nixvim, antigravity-nix, warp-preview-flake, ... }@inputs: {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -40,4 +44,3 @@
     };
   };
 }
-
